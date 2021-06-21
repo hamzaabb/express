@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="../visite">MAP project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../visite">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/monuments/">Gestion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/monuments/add">Ajouter</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        BIENVENUE AU SITE DES MONUMENTS !
+      </span>
+    </div>
+  </nav>
+</head>
+<body style="background-color: #b4ddf0;">
+
+<div class="container">
+  <h2 style="margin-left: 400px;">ajouter monuments</h2>
+  <form action="/monuments/save" method="post">
+
+    <div class="form-group">
+      <label for="id">ID:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter ID" name="id" required>
+    </div>
+    <div class="form-group">
+      <label for="nom">Nom:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter name" name="nom" required>
+    </div>
+        <div class="form-group">
+      <label for="longitude">Longitude:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter Longitude" name="longitude" required>
+    </div>
+    <div class="form-group">
+      <label for="latitude">Latitude:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter Latitude" name="latitude" required>
+    </div>
+    <div class="form-group">
+      <label for="ville">Ville:</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter Ville" name="ville" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button onclick="window.location.href='http://localhost:3000/monuments/'" class="btn btn-primary">Retour</button>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= title %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: #75c0eb;">
+    <a class="navbar-brand" href="../visite">MAP project</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="../visite">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/monuments/">Gestion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/monuments/add">Ajouter</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        BIENVENUE AU SITE DES MONUMENTS !
+      </span>
+    </div>
+  </nav>
+</head>
+<body style="background-color: #b4ddf0;">
+
+<div class="container">
+  <h2 style="margin-left: 400px;"><%= title %></h2>
+  <br/><br/>
+  <table class="table ">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>NOM</th>
+	<th>LONGITUDE</th>
+	<th>LATITUDE</th>
+	<th>VILLE</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% etudiant.forEach(function(e){ %>
+            <tr>
+                <td><%= e.id %></td>
+                <td><%= e.nom %></td>
+                <td><%= e.longitude %></td>
+                <td><%= e.latitude %></td>
+                <td><%= e.ville %></td>
+                
+                <td>
+                    <a href="/monuments/edit/<%= e.id %>" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="/monuments/delete/<%= e.id %>" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+  </table>
+  <a href="http://localhost:3000/visite" class="button2 button1" style="margin-left: 300px">Retour au map</a>
+  <a href="/monuments/add" class="button2 button1">Ajouter monuments</a><br/><br/>
+</div>
+
+</body>
+</html>
